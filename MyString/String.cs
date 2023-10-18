@@ -86,6 +86,23 @@
             this.str = new_str; 
             this.length = new_lenght;
         }
+        public void Concat(char[] str2)
+        {
+            int new_lenght = this.length + str2.Length;
+            char[] new_str = new char[new_lenght];
+
+            for (int i = 0, j = 0; i < new_lenght; i++)
+            {
+                if (i < this.length) new_str[i] = this.str[i];
+                else
+                {
+                    new_str[i] = str2[j];
+                    j++;
+                }
+            }
+            this.str = new_str;
+            this.length = new_lenght;
+        }
 
 
         public override string ToString()

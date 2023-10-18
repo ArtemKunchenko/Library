@@ -21,7 +21,8 @@ namespace Library
             //ex2.RemoveAll();
             //Console.WriteLine(ex2.ToString());
             Console.WriteLine(ex.IndexOf(str1));// attention ex was changed above
-            ex.Concat(str1, str2 );
+            //ex.Concat(str1, str2 );
+            ex.Concat(str2);
             Console.WriteLine(ex.ToString());
             Console.ReadKey();
             
