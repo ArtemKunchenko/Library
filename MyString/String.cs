@@ -69,6 +69,23 @@
             }
             return -1;
         }
+        public void Concat(char[] str1, char[] str2)
+        {
+            int new_lenght = str1.Length + str2.Length;
+            char[] new_str = new char[new_lenght];
+
+            for (int i = 0, j=0; i < new_lenght; i++)
+            {
+                if(i< str1.Length) new_str[i] = str1[i];
+                else
+                {
+                    new_str[i] = str2[j];
+                    j++;
+                }
+            }
+            this.str = new_str; 
+            this.length = new_lenght;
+        }
 
 
         public override string ToString()
