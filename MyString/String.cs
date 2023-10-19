@@ -1,4 +1,7 @@
-﻿namespace MyString
+﻿using System.Collections.Generic;
+using System.Collections.Specialized;
+
+namespace MyString
 {
     public class String
     {
@@ -103,7 +106,45 @@
             this.str = new_str;
             this.length = new_lenght;
         }
-
+        public void Replace(char[] newValue)
+        {
+            this.str = newValue;
+            this.length = newValue.Length;  
+        }
+        public void Trim(char ch)
+        {
+            List<char> temp = new List<char>();
+            for (int i = 0; i < this.length; i++)
+            {
+                if (this.str[i]!=ch) temp.Add(this.str[i]);  
+            }
+            this.str = temp.ToArray();  
+            this.length = this.str.Length;
+        }
+        public bool CompareTo(char[] str1, char[] str2)
+        {
+            if(str1.Length != str2.Length) return false;
+            else
+            {
+                for (int i = 0; i<str1.Length; i++)
+                {
+                    if (str1[i] != str2[i])return false;
+                }
+                return true;
+            } 
+        }
+        public bool CompareTo(char[] str2)
+        {
+            if (this.length != str2.Length) return false;
+            else
+            {
+                for (int i = 0; i < this.length; i++)
+                {
+                    if (this.str[i] != str2[i]) return false;
+                }
+                return true;
+            }
+        }
 
         public override string ToString()
         {
