@@ -13,6 +13,7 @@ namespace Library
             char[] str3 = new char[] { 'A', 'l', 'i', 'x' };
             MyString.String ex = new MyString.String(str);
             MyString.String ex3 = new MyString.String(str1);
+            MyString.String ex4 = new MyString.String(str2);
             //Console.WriteLine(ex.StartWith());
             //Console.WriteLine(ex.EndWith());
             //Console.WriteLine(ex.ToString());
@@ -30,7 +31,10 @@ namespace Library
             //ex.Trim(',');
             //Console.WriteLine(ex.ToString());
             //Console.WriteLine(ex.CompareTo(str1,str3));
-            Console.WriteLine(ex3.CompareTo(str3));
+            //Console.WriteLine(ex3.CompareTo(str3));
+            Console.WriteLine(ex4.ToString());
+            ex4=ex+ex3;
+            Console.WriteLine(ex4.ToString());
             Console.ReadKey();
             
         }

@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System.CodeDom;
+using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Security.Cryptography;
 
 namespace MyString
 {
@@ -151,5 +153,23 @@ namespace MyString
             string str_print = new string(this.str);
             return str_print;
         }
+        public static String operator +(String left, String right)
+        {
+            int new_lenght=left.length + right.length+1;
+            char[]new_srt=new char[new_lenght];
+            for (int i = 0; i < left.length; i++)
+            {
+                new_srt[i] = left.str[i];    
+            }
+            new_srt[left.length] = ' ';
+            for (int i = 0; i < right.length; i++)
+            {
+                new_srt[left.length+1+i] = right.str[i];
+            }
+            String sum_str = new String(new_srt);
+           
+            return sum_str;
+        }
+
     }
 }
